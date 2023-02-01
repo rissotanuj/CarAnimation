@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container{
+    margin: auto;
+    height: 820px;
+    width: 100%;
+    border: 2px solid black;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.trees{
+    background: url('trees.png') no-repeat;
+    background-size: cover;
+    height: 70vh;
+    width: 100vw;
+    position: absolute;
+    border: 2px solid black;
+    top: 0px;
+    left: 0px;
+}
+
+.track{
+    height: 30vh;
+    width: 200vw;
+    background: url('track.png') no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 70vh;
+    animation: Move linear 1s infinite;
+
+} 
+
+.car{
+    height: 30vh;
+    width: 40vw;
+    position: absolute;
+    top: 60vh;
+    left: 40vw;
+    animation: Shake linear .3s infinite;
+}
+
+.carBody img{
+    height: 99px;
+    width: 301px;
+    transform: rotate(-1.7deg);
+}
+
+.carWheelLeft img{
+    height: 58px;
+    width: 52px;
+    position: absolute;
+    left: 39px;
+    top: 41px;
+    animation: LWrotate linear .2s infinite;
+}
+
+.carWheelRight img{
+    height: 62px;
+    width: 59px;
+    position: absolute;
+    left: 187px;
+    top: 37px;
+    animation: LRrotate linear .2s infinite;
+
+}
+
+@keyframes LWrotate{
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes LRrotate{
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes Move{
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes Shake{
+    0%{
+        transform: translateY(-3px);
+    }
+    50%{
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translate(-3px);
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .container{
+        height: 100vh;
+    }
+
+    html{
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .car{
+        left: 14vw;
+    }
+  }
